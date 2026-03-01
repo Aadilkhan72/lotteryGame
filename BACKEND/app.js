@@ -13,14 +13,14 @@ const app=express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-console.log("mobile request");
+
 
 
 const corsOptions = {
-  // origin: [
-  //   process.env.FRONTEND_URL,
-  // ],
-  origin:true,
+  origin: [
+    process.env.FRONTEND_URL,
+  ],
+ 
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
@@ -28,7 +28,9 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "OK" });
+});
 
 app.use("/api",lotteryRouter);
 
