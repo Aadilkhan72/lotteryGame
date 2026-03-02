@@ -4,10 +4,10 @@ export const updatePatti = async (req, res) => {
   try {
     const { lotteryName, patti, finalAmt:amount } = req.body;
 
-      console.log(req.body);
+     // console.log(req.body);
 
     
-     console.log("amount = ",amount);
+    // console.log("amount = ",amount);
     // res.json("working");
     // return ;
 

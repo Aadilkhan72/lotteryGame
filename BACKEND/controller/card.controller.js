@@ -4,7 +4,7 @@ import { LotteryModel } from "../models/lottery.model.js";
 
 export const updateCard = async (req, res) => {
   try {
-    console.log("received");
+    // console.log("received");
     const { lotteryName, cardNumber, finalAmt:amount } = req.body;
 
     // console.log(req.body);
@@ -50,7 +50,7 @@ export const updateCard = async (req, res) => {
 export const getAllCards = async (req, res) => {
   try {
     const { lotteryName } = req.params;
-    console.log("received");
+    // console.log("received");
 
     if (!lotteryName) {
       return res.status(400).json({ message: "Lottery name is required" });
